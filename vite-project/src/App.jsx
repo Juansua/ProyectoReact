@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import products from '../data.js'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const list = products.map(({id, ...props}) => (<ItemListContainer key={id} {...props}/>))
 
   return (
     <>
@@ -16,8 +14,8 @@ function App() {
         <NavBar />
       </nav>
     </header>
-    <main>
-      <ItemListContainer greeting="Bienvenido a HADA" />
+    <main className='container mx-auto my-8 flex flex-wrap gap-12 justify-center'>
+      {list}
     </main>
     </>
   )
