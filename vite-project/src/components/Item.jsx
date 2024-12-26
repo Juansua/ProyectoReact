@@ -1,7 +1,7 @@
 import AddToCart from "./AddToCart"
 import ItemCount from "./ItemCount"
 
-export default function Item({ title, price, stock, description, category, image, rating }) {
+export default function Item({ title, price, stock, description, category, image }) {
   return (
     <div className="columns-2 bg-slate-200 flex flex-col w-[300px] justify-between">
         <div>
