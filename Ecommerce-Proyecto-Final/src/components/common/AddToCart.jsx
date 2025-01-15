@@ -7,7 +7,7 @@ function AddToCart(children) {
         console.log("You Clicked!!")
     }
     return (
-    <button className="bg-slate-600 hover:bg-slate-800 text-white py-2 px-4 my-2 rounded-lg justify-end" onClick={handleClick}>Add to cart</button>
+    <button className="flex ml-auto text-white bg-lime-600 border-0 py-2 px-6 focus:outline-none hover:bg-lime-700 rounded" onClick={handleClick}>Add to cart</button>
     )
 }
 
