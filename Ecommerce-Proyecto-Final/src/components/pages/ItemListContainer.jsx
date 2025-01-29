@@ -1,5 +1,5 @@
 import Item from "../common/Item"
-import getAsyncData, { getAsyncDataByCategory} from "../../data/getAsyncData";
+import getAsyncData, { getAsyncDataByCategory} from "../../data/dataBase";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 

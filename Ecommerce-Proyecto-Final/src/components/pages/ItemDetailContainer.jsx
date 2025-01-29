@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getAsyncDataById } from "../../data/getAsyncData"
+import { getAsyncDataById } from "../../data/dataBase"
 import ItemDetail from "../common/ItemDetail"
 import { useParams } from "react-router-dom"
 
