@@ -6,6 +6,8 @@ import { createBuyOrder } from '../../../data/dataBase';
 function CartContainer() {
     const { cartItems, removeItem, getTotalPrice } = useContext(cartContext);
 
+    const [ orderId, setOrderId] = useState(null);
+
       const [userData, setUserData] = useState({
         username: "",
         surname: "",
@@ -43,6 +45,7 @@ function CartContainer() {
       }
 
       const newOrder = await createBuyOrder(orderData);
+      setOrderId(newOrder);
       console.log("Compra Realizada", newOrder);
     }
 
@@ -89,6 +92,9 @@ function CartContainer() {
           >
             Realizar Compra
           </button>
+          <div>
+            {orderId === null ? "" : <h2>Gracias por tu compra! Tu ID de compra es: {orderId}</h2>}
+          </div>
         </form>
     </div>
   )
