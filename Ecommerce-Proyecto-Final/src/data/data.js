@@ -5,7 +5,7 @@ const products = [
       price: 21.99,
       stock: 5,
       description: "A lightweight essence with 96% snail mucin that repairs and hydrates skin.",
-      category: "Essence",
+      category: "essence",
       image: "/images/COSRX Advanced Snail 96 Mucin Essence.png",
       rating: { rate: 4.8, count: 1530 }
     },
@@ -15,7 +15,7 @@ const products = [
       price: 25.50,
       stock: 10,
       description: "A hydrating overnight mask that soothes and nourishes the skin.",
-      category: "Mask",
+      category: "mask",
       image: "/images/Laneige Water Sleeping Mask.png",
       rating: { rate: 4.7, count: 1904 }
     },
@@ -25,7 +25,7 @@ const products = [
       price: 27.00,
       stock: 8,
       description: "A hydrating serum infused with green tea and green tea seed oil.",
-      category: "Serum",
+      category: "serum",
       image: "/images/Innisfree Green Tea Seed Serum.png",
       rating: { rate: 4.6, count: 1425 }
     },
@@ -35,7 +35,7 @@ const products = [
       price: 18.99,
       stock: 3,
       description: "A soothing toner perfect for sensitive skin, balancing pH levels.",
-      category: "Toner",
+      category: "toner",
       image: "/images/Etude House SoonJung pH 5.5 Relief Toner.png",
       rating: { rate: 4.9, count: 1800 }
     },
@@ -45,7 +45,7 @@ const products = [
       price: 31.99,
       stock: 4,
       description: "A cult favorite essence that hydrates, smooths, and brightens skin.",
-      category: "Essence",
+      category: "essence",
       image: "/images/Missha Time Revolution The First Treatment Essence RX.png",
       rating: { rate: 4.8, count: 1702 }
     },
@@ -55,7 +55,7 @@ const products = [
       price: 37.99,
       stock: 2,
       description: "A green-to-beige cream that soothes redness and evens skin tone.",
-      category: "Moisturizer",
+      category: "moisturizer",
       image: "/images/Dr.Jart+ Cicapair Tiger Grass Color Correcting Treatment.png",
       rating: { rate: 4.7, count: 1500 }
     },
@@ -65,7 +65,7 @@ const products = [
       price: 22.50,
       stock: 6,
       description: "A vitamin C serum that brightens skin tone and reduces acne scars.",
-      category: "Serum",
+      category: "serum",
       image: "/images/Klairs Freshly Juiced Vitamin Drop.png",
       rating: { rate: 4.5, count: 1360 }
     },
@@ -75,7 +75,7 @@ const products = [
       price: 23.00,
       stock: 4,
       description: "A sherbet-like cleansing balm that removes makeup and impurities.",
-      category: "Cleanser",
+      category: "cleanser",
       image: "/images/Banila Co Clean It Zero Cleansing Balm.png",
       rating: { rate: 4.8, count: 2150 }
     },
@@ -85,7 +85,7 @@ const products = [
       price: 20.00,
       stock: 3,
       description: "A gentle cleansing balm that melts away makeup and nourishes the skin.",
-      category: "Cleanser",
+      category: "cleanser",
       image: "/images/Heimish All Clean Balm.png",
       rating: { rate: 4.6, count: 1200 }
     },
@@ -95,7 +95,7 @@ const products = [
       price: 18.99,
       stock: 7,
       description: "A pure centella ampoule that soothes irritation and promotes healing.",
-      category: "Serum",
+      category: "serum",
       image: "/images/Skin1004 Madagascar Centella Ampoule.png",
       rating: { rate: 4.7, count: 1456 }
     },
@@ -105,7 +105,7 @@ const products = [
       price: 14.00,
       stock: 9,
       description: "A gentle gel cleanser with a low pH that cleanses without stripping skin.",
-      category: "Cleanser",
+      category: "cleanser",
       image: "/images/COSRX Low pH Good Morning Gel Cleanser.png",
       rating: { rate: 4.6, count: 1900 }
     },
@@ -115,7 +115,7 @@ const products = [
       price: 12.50,
       stock: 5,
       description: "A brightening cleansing foam enriched with rice water for hydration.",
-      category: "Cleanser",
+      category: "cleanser",
       image: "/images/The Face Shop Rice Water Bright Cleansing Foam.png",
       rating: { rate: 4.5, count: 1100 }
     },
@@ -125,7 +125,7 @@ const products = [
       price: 38.00,
       stock: 6,
       description: "A hydrating essence with 93% fermented ingredients for glowing skin.",
-      category: "Essence",
+      category: "essence",
       image: "/images/Neogen Dermalogy Real Ferment Micro Essence.png",
       rating: { rate: 4.9, count: 1350 }
     },
@@ -135,7 +135,7 @@ const products = [
       price: 17.99,
       stock: 4,
       description: "A lightweight sunscreen with centella that protects and soothes skin.",
-      category: "Sunscreen",
+      category: "sunscreen",
       image: "/images/Purito Centella Unscented Sunscreen SPF 50.png",
       rating: { rate: 4.7, count: 2250 }
     },
@@ -145,7 +145,7 @@ const products = [
       price: 19.99,
       stock: 3,
       description: "A hydrating sunscreen with rice and probiotics, perfect for sensitive skin.",
-      category: "Sunscreen",
+      category: "sunscreen",
       image: "/images/Beauty of Joseon Relief Sun SPF 50.png",
       rating: { rate: 4.8, count: 2100 }
     }

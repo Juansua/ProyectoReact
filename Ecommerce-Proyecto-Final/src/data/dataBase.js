@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore";
+import products from "./data.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,7 +19,6 @@ const app = initializeApp(firebaseConfig);
 
 // 2. Conexión con la  base de datos de Firestore
 const db = getFirestore(app);
-console.log(db);
 
 // 3. Funciones para extraer datos
 export default async function getAsyncData() {
@@ -58,4 +58,21 @@ export async function getAsyncDataByCategory(cateId) {
       return { ...doc.data(), id: doc.id}
   });
       return documentsData;
+}
+
+export async function exportProductsToDB() {
+  //for... of
+  // lo mismo que products.forEach( item => {} )
+  for(let item of products){
+    delete products.id;
+    const docID = await addDoc( collection(db, "products"), item)
+    console.log("Creado Documento", docID.id)
+  }
+}
+
+export async function createBuyOrder(orderData) {
+  console.log(orderData)
+  const newOrderDoc = await addDoc(collection(db, "orders"), orderData);
+
+  return newOrderDoc.id;
 }

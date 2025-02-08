@@ -1,21 +1,34 @@
 import { useState } from "react"
 import addIcon from  "../../assets/add.svg"
 import removeIcon from  "../../assets/remove.svg"
+import Button from "./Button";
+import AddToCart from "./AddToCart";
 
-export default function ItemCount({stock}) {
-    const [count, setCount] = useState(0);
+export default function ItemCount({stock, handleAddToCart}) {
+    const [count, setCount] = useState(1);
+
+    const handleAdd = () => {
+      setCount((prev) => prev == 1 ? prev : prev -1)
+    }
+
+    const handleSubstract = () => {
+      setCount((prev) => prev == stock ? prev : prev +1)
+    }
+
   return (
     <div className=" flex justify-center items-center gap-4 h-full">
 
-        <button className="bg-slate-200 rounded-sm hover:bg-slate-300" onClick={() => setCount((prev) => prev == 0 ? prev : prev -1)} >
-        <img src={removeIcon} alt="add Icon" />
-        </button>
+        <Button onClick={handleAdd} >
+        <img src={removeIcon} alt="remove Icon" />
+        </Button>
 
         <p>{count}</p>
 
-        <button className="bg-slate-200 rounded-sm hover:bg-slate-300" onClick={() => setCount((prev) => prev == stock ? prev : prev +1)}>
+        <Button onClick={handleSubstract} >
         <img src={addIcon} alt="add Icon" />
-        </button>
+        </Button>
+
+        <AddToCart onClick={ () => { handleAddToCart(count) } }/>
         
     </div>
   )

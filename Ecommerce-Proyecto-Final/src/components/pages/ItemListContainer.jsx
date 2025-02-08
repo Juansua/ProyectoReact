@@ -12,13 +12,11 @@ function ItemListContainer() {
   useEffect(() => {
     if (cateId === undefined) {
       const respuestaPromise = getAsyncData();
-      console.log(respuestaPromise);
       respuestaPromise
         .then((respuesta) => setProducts(respuesta))
         .catch((error) => alert(error));
     } else {
       const respuestaPromise = getAsyncDataByCategory(cateId);
-      console.log(respuestaPromise);
       respuestaPromise
         .then((respuesta) => setProducts(respuesta))
         .catch((error) => alert(error));

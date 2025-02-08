@@ -8,7 +8,7 @@ export default function getAsyncData() {
 
         setTimeout(() => {
             errorFatal ? reject("Algo salió mal!!!") : resolve(products);
-        }, 500);
+        }, 2000);
     })
 
     console.log("Promesa Generada")
@@ -21,7 +21,7 @@ export function getAsyncDataById(id) {
         setTimeout(() => {
                 const itemRequested = products.find( (item) => item.id === Number(id));
                 resolve(itemRequested);
-        }, 500);
+        }, 2000);
     }
 )
     console.log("Promesa Generada")
@@ -35,7 +35,7 @@ export function getAsyncDataByCategory(cateId) {
         setTimeout(() => {
                 const itemRequested = products.filter( (item) => item.category.toLowerCase() === cateId.toLowerCase());
                 resolve(itemRequested);
-        }, 500);
+        }, 2000);
     }
 )
     console.log("Promesa Generada")

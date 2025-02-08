@@ -1,8 +1,19 @@
-# React + Vite
+# Hada Ecommerce - Proyecto en React
+Este repositorio es mi proyecto para el curso de React en Coderhouse
+### Creado con el curso de CoderHouse
+- Dictado por el profesor Santiago Salkin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Objetivo del proyecto
+Aprender a usar Javascript + React a través de un ecommerce báscio que me permita entender los fundamentos de los temas aprendidos y seguir profundizando en ellos.
+## Motivación ¿Por qué lo crearon?
+Busco cambiar darle una vuelta a mi carrera de diseñador UX/UI y adentrarme en el mundo del frontend. Mi sueño es poder diseñar y programar mis propias páginas web para clientes selectos.
+## Herramientas que utilizaron
+Utilicé muchas herramientas, de las cuales destaco:
+- Javascript
+- HTML
+- CSS
+- Tailwind
+- React Router
+- React Spinners
+- Firebase/Firestore
+# Muchas gracias
