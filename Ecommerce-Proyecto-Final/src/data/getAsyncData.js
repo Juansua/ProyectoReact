@@ -5,10 +5,7 @@ export default function getAsyncData() {
     //.... Ejecutando tarea
     const promiseData = new Promise((resolve, reject) => {
         const errorFatal = false;
-
-        setTimeout(() => {
             errorFatal ? reject("Algo salió mal!!!") : resolve(products);
-        }, 2000);
     })
 
     console.log("Promesa Generada")
@@ -18,10 +15,8 @@ export default function getAsyncData() {
 export function getAsyncDataById(id) {
     const promiseData = new Promise((resolve) => {
 // TODO: validar si encontramos un producto -> si no es así, rechazamos la promesa
-        setTimeout(() => {
                 const itemRequested = products.find( (item) => item.id === Number(id));
                 resolve(itemRequested);
-        }, 2000);
     }
 )
     console.log("Promesa Generada")
@@ -31,11 +26,8 @@ export function getAsyncDataById(id) {
 export function getAsyncDataByCategory(cateId) {
 
     const promiseData = new Promise((resolve) => {
-
-        setTimeout(() => {
                 const itemRequested = products.filter( (item) => item.category.toLowerCase() === cateId.toLowerCase());
                 resolve(itemRequested);
-        }, 2000);
     }
 )
     console.log("Promesa Generada")

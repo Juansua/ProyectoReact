@@ -2,6 +2,7 @@ import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
 import { useContext, useState } from "react"
 import cartContext from "../../context/cartContext";
+import MainButton from "./buttons/MainButton";
 cartContext
 
 function ItemDetail({ title, price, stock, description, category, image, id}) {
@@ -20,7 +21,9 @@ function ItemDetail({ title, price, stock, description, category, image, id}) {
     <div className="container py-24 mx-auto">
       <div className="lg:w-4/5 mx-auto flex flex-wrap py-8 pr-16 rounded-2xl drop-shadow-xl bg-white">
 
-        <Link to="/" className="text-slate-800 bg-slate-200 py-2 px-6 focus:outline-none hover:bg-slate-300 rounded absolute top-6 left-6">Go Back</Link>
+        <MainButton className="absolute top-6 left-6">
+          <Link to="/shop-now">Go Back</Link>
+        </MainButton>
       
         <img src={image} alt={title} className="lg:w-1/2 w-full lg:h-[500px] h-64 object-contain object-center rounded"/>
 
@@ -28,7 +31,7 @@ function ItemDetail({ title, price, stock, description, category, image, id}) {
 
           <div className="py-4">
 
-            <h2 className="text-sm title-font text-gray-500 tracking-widest">
+            <h2 className="text-sm title-font text-gray-500 tracking-widest first-letter:uppercase">
               {category}
             </h2>
 

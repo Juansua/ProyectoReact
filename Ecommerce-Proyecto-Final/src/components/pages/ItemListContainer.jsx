@@ -1,7 +1,7 @@
-import Item from "../common/Item"
 import getAsyncData, { getAsyncDataByCategory} from "../../data/dataBase";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ProductList from "../layout/body/ProductList";
 
 function ItemListContainer() {
   //State
@@ -21,15 +21,10 @@ function ItemListContainer() {
         .then((respuesta) => setProducts(respuesta))
         .catch((error) => alert(error));
     }
-  }, [ cateId]);
-
-  //Map
-    const list = products.map(({id, ...props}) => (<Item key={id} id={id} {...props}/>))
+  }, [ cateId ]);
 
   return (
-    <main className='container mx-auto my-8 flex flex-wrap gap-12 justify-center'>
-        {list}
-    </main>
+      <ProductList products={products}/>
   )
 }
 

@@ -1,41 +1,43 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import MainButton from "./buttons/MainButton";
 
-export default function Item({ title, price, description, category, image, id }) {
+export default function Item({ title, price, category, image, id }) {
+  const [ isHovered, setIsHovered ] = useState(false);
+
   return (
-    <div className="bg-slate-200 flex flex-col w-[300px] justify-between p-4 rounded-lg">
+    <div className={`
+      bg-white border-2 border-transparent flex flex-col gap-4 w-[290px] p-4 rounded-lg text-left text-sec-blue-800 shadow-lg
+      hover:border-sec-blue-100 hover:shadow-xl transition-all duration-200
+      `}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+    >
 
-      <div className="pb-4">
-
-        <img src={image} className="w-full h-52 object-contain bg-white p-4 rounded-md"/>
-
-        <div className="my-4">
-
-          <p className=" pb-2 font-thin font-mono text-slate-500">
-              {category}
-          </p>
-
-          <h3 className="text-2xl text-slate-700 font-semibold">
-            {title}
-          </h3>
-
-          <p className="text-slate-600">
-            {description}
-          </p>
-
-        </div>
-
-      </div>
-
+        <img src={image} className="w-full h-[258px] object-contain bg-white" alt={title}/>
       <div>
+        <h3 className="text-base truncate text-metal-500 font-semibold">
+          {title}
+        </h3>
 
-        <p className="font-bold text-xl text-slate-800 pb-4">
-          $ {price}
-        </p>
+        <div className="flex justify-between items-end">
+          <div className="">
+            <p className="font-normal text-sec-blue-700 capitalize">
+              {category}
+            </p>
 
-        <Link to={`/item/${id}`} className="mx-auto p-8 py-1 bg-slate-300 rounded-md hover:bg-slate-400 font-regular">View Details</Link>
+            <p className="font-bold text-base">
+              ${price}
+            </p>
+          </div>
 
+          <MainButton className={`${isHovered ? "opacity-100" : "opacity-0"} transition-opacity duration-200`}>
+            <Link to={`/item/${id}`}>
+              View Details
+            </Link>
+          </MainButton>
+        </div>
       </div>
-
     </div>
   )
 }

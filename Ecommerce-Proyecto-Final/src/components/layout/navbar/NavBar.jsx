@@ -1,15 +1,14 @@
 import { NavLink } from "react-router-dom"
-import CartWidget from "./CartWidget"
 
 function NavBar() {
   return (
-    <div className="flex justify-between items-center gap-8">
-        <ul className="flex gap-4 justify-center">
+    <div>
+        <ul className="flex gap-4 flex-wrap justify-center font-light text-pri-green-850">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <a href="#">Shop Now</a>
+              <NavLink to="/shop-now">Shop Now</NavLink>
             </li>
             <li>
               <a href="#">About us</a>
@@ -18,7 +17,6 @@ function NavBar() {
               <a href="#">Contact us</a>
             </li>
         </ul>
-        <NavLink to="/cart"><CartWidget /></NavLink>
     </div>
   )
 }

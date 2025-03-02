@@ -1,7 +1,7 @@
 import { useState } from "react"
 import addIcon from  "../../assets/add.svg"
 import removeIcon from  "../../assets/remove.svg"
-import Button from "./Button";
+import CountButton from "./buttons/CountButton";
 import AddToCart from "./AddToCart";
 
 export default function ItemCount({stock, handleAddToCart}) {
@@ -18,15 +18,15 @@ export default function ItemCount({stock, handleAddToCart}) {
   return (
     <div className=" flex justify-center items-center gap-4 h-full">
 
-        <Button onClick={handleAdd} >
+        <CountButton onClick={handleAdd} >
         <img src={removeIcon} alt="remove Icon" />
-        </Button>
+        </CountButton>
 
         <p>{count}</p>
 
-        <Button onClick={handleSubstract} >
+        <CountButton onClick={handleSubstract} >
         <img src={addIcon} alt="add Icon" />
-        </Button>
+        </CountButton>
 
         <AddToCart onClick={ () => { handleAddToCart(count) } }/>
         

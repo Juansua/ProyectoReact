@@ -40,6 +40,7 @@ export default async function getAsyncData() {
     return documentsData;
 }
 
+// ----> Función para obtener todos los productos
 export async function getAsyncDataById(id) {
   const docRef = doc(db, "products", id);
   const docSnapshot = await getDoc(docRef);
@@ -48,6 +49,7 @@ export async function getAsyncDataById(id) {
   return docData;
 }
 
+// ----> Función para obtener los productos por cada categoría
 export async function getAsyncDataByCategory(cateId) {
 
   const productsColRef = query(collection(db, "products"), where("category", "==", cateId));
@@ -60,6 +62,7 @@ export async function getAsyncDataByCategory(cateId) {
       return documentsData;
 }
 
+// ----> Función para exportar productos a la base de datos (solo usar si de verdad quieres subir muchos productos)
 export async function exportProductsToDB() {
   //for... of
   // lo mismo que products.forEach( item => {} )
@@ -70,9 +73,22 @@ export async function exportProductsToDB() {
   }
 }
 
+// ----> Función para crear una orden de compra
 export async function createBuyOrder(orderData) {
   console.log(orderData)
   const newOrderDoc = await addDoc(collection(db, "orders"), orderData);
 
   return newOrderDoc.id;
+}
+
+export async function getAsyncDataByDiscount() {
+  //Busco los documentos que cumplan con la característica
+  const q = query(collection(db, "products"), where("discount", "==", true));
+  
+  //Recibo los documentos por medio de getDocs
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
 }
