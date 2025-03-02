@@ -1,35 +1,27 @@
 import { getAsyncDataByDiscount } from "../../../data/dataBase"
 import { useEffect, useState } from "react";
 import ProductList from "../../layout/body/ProductList"
-import Loader from "../../common/Loader"
+// import Loader from "../../common/Loader"
 
 function DiscountProducts() {
   const [products, setProducts] = useState([]);
-  const [ isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true)
-    const respuestaPromise = getAsyncDataByDiscount();
-    respuestaPromise
-    .then((data) => {
-      setProducts(data);
-      setIsLoading(false);
-    })
-    .catch((error) => {
-      console.error("Error fetching discount products:", error);
-      setIsLoading(false);
-    })
+    async function getProducts() {
+      const response = await getAsyncDataByDiscount();
+      setProducts(response)
+    }
+    getProducts()
   },[])
 
-  if(isLoading){
-    return <Loader/>
-  }else{
-      return (
-    <section>
-        <ProductList products={products}></ProductList>
+  return (
+    <section className="container mx-auto text-left mt-12">
+      <h2 className="text-[32px] font-medium text-pri-green-800 border-b-[3px] border-[#E2E5DA]">
+        Featured Products
+      </h2>
+      <ProductList products={products}/>
     </section>
   )
-  }
 }
 
 export default DiscountProducts

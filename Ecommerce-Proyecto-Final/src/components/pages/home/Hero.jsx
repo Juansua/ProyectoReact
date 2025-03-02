@@ -3,7 +3,7 @@ import MainButton from "../../common/buttons/MainButton"
 
 function Hero() {
   return (
-    <section className="container mx-auto pr-10 flex justify-between">
+    <section className="container mx-auto mt-2 pr-10 flex justify-between">
         <div className="my-auto text-left">
             <p className="text-lg uppercase text-pri-green-850 tracking-widest">
                 Elegant & Luxurious
@@ -23,7 +23,7 @@ function Hero() {
                 and enhance your natural glow.
             </p>
             <Link to="/shop-now">
-                <MainButton className="mt-16 px-10 py-4">Shop Now</MainButton>
+                <MainButton className="mt-16 w-[206px] py-[18px] text-xl font-normal">Shop Now</MainButton>
             </Link>
         </div>
 

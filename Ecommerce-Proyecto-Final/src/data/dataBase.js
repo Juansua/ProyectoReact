@@ -87,8 +87,8 @@ export async function getAsyncDataByDiscount() {
   
   //Recibo los documentos por medio de getDocs
   const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
+  const queryData = querySnapshot.docs.map( doc => {
+    return { ...doc.data(), id: doc.id}
+  })
+  return queryData;
 }
