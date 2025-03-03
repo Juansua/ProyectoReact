@@ -1,6 +1,6 @@
 
 
-function MainButton({children, className, isHovered}) {
+function MainButton({children, className}) {
   return (
     <button className={
         `

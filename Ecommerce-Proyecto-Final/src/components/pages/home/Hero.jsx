@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import MainButton from "../../common/buttons/MainButton"
 
 function Hero() {
   return (
-    <section className="container mx-auto mt-2 pr-10 flex justify-between">
+    <section className="container mx-auto mt-2 mb-[55px] pr-10 flex justify-between">
         <div className="my-auto text-left">
             <p className="text-lg uppercase text-pri-green-850 tracking-widest">
                 Elegant & Luxurious
@@ -23,7 +24,9 @@ function Hero() {
                 and enhance your natural glow.
             </p>
             <Link to="/shop-now">
-                <MainButton className="mt-16 w-[206px] py-[18px] text-xl font-normal">Shop Now</MainButton>
+                <MainButton className="flex items-center gap-2 pl-10 pr-8 mt-16 py-[18px] text-xl font-normal shadow-lg">
+                    Shop Now <ChevronRightIcon className="h-6"/>
+                </MainButton>
             </Link>
         </div>
 
