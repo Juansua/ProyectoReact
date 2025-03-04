@@ -15,7 +15,7 @@ function DiscountProducts() {
   },[])
 
   return (
-    <section className="container mx-auto text-left my-[110px]">
+    <section className="container mx-auto text-left mt-[50px] mb-[110px]">
       <h2 className="text-[32px] font-medium text-pri-green-800 border-b-[3px] border-[#E2E5DA]">
         Featured Products
       </h2>

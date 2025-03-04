@@ -1,13 +1,14 @@
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
 
+function MainButton({children, className, rightIcon}) {
 
-function MainButton({children, className}) {
   return (
     <button className={
         `
-        py-[10px] px-6 text-sm rounded-md bg-sec-blue-700 hover:bg-sec-blue-800 text-white font-regular ${className} transition-colors duration-300
+        flex items-center gap-2 py-[10px] px-6 text-sm rounded-md bg-sec-blue-700 hover:bg-sec-blue-800 text-white font-regular ${className} transition-colors duration-300
         `
     }>
-        {children}
+        {children} {rightIcon ? <ChevronRightIcon className='h-6'/> : ""}
     </button>
   )
 }

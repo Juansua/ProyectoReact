@@ -18,3 +18,7 @@ a.active {
   color: #3a5668;
   font-weight: 500;
 }
+
+.text-shad {
+  text-shadow: rgba(0, 0, 0, 0.253) 0 4px 2px;
+}
