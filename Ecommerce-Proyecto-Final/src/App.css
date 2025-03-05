@@ -22,3 +22,15 @@ a.active {
 .text-shad {
   text-shadow: rgba(0, 0, 0, 0.253) 0 4px 2px;
 }
+
+/* ----- Hovers ---- */
+
+.darkBlue-hover li:hover {
+  --tw-text-opacity: 1;
+    color: rgb(58 86 104 / var(--tw-text-opacity, 1)) /* #3a5668 */;
+}
+
+.lightBlue-hover li:hover {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity, 1)) /* #cbd5e1 */;
+}

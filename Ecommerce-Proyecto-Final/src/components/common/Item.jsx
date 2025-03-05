@@ -31,7 +31,7 @@ export default function Item({ title, price, category, image, id }) {
             </p>
           </div>
 
-          <MainButton className={`${isHovered ? "opacity-100" : "opacity-0"} transition-opacity duration-200`}>
+          <MainButton className={`${isHovered ? "opacity-100" : "opacity-0"}`}>
             <Link to={`/item/${id}`}>
               View Details
             </Link>

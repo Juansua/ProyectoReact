@@ -3,6 +3,7 @@ import Hero from "./Hero"
 import LogoBrands from "./LogoBrands"
 import FeaturedCategories from "./FeaturedCategories/FeaturedCategories"
 import CTABanners from "./CTABanners"
+import Footer from "../../layout/footer/Footer"
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <img className="container mx-auto rounded-xl shadow-md" src="https://res.cloudinary.com/dqyroytaz/image/upload/v1741057191/BannerWoman_nwmqis.jpg" alt="" />
       <DiscountProducts/>
       <CTABanners/>
+      <Footer/>
     </div>
   )
 }
