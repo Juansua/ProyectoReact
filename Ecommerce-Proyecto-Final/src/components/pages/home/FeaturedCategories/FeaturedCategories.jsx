@@ -9,11 +9,11 @@ function FeaturedCategories() {
         </h2>
 
         <div className="flex gap-7 justify-between h-[393px] mt-10">
-            <Categories url="https://res.cloudinary.com/dqyroytaz/image/upload/v1740971439/Home-Serum-Category_hgw4us.jpg">Serum</Categories>
+            <Categories url="bg-[url('https://res.cloudinary.com/dqyroytaz/image/upload/v1740971439/Home-Serum-Category_hgw4us.jpg')]">Serum</Categories>
 
-            <Categories url="https://res.cloudinary.com/dqyroytaz/image/upload/v1740971439/Home-Sunscreen-Category_cesahb.jpg">Sunscreen</Categories>
+            <Categories url="bg-[url('https://res.cloudinary.com/dqyroytaz/image/upload/v1740971439/Home-Sunscreen-Category_cesahb.jpg')]">Sunscreen</Categories>
 
-            <Categories url="https://res.cloudinary.com/dqyroytaz/image/upload/v1740971439/Home-Moisturizer-Category_ltf9ia.jpg">Serum</Categories>
+            <Categories url="bg-[url('https://res.cloudinary.com/dqyroytaz/image/upload/v1740971439/Home-Moisturizer-Category_ltf9ia.jpg')]">Serum</Categories>
         
             <div className="w-[237px] bg-pri-green-50 flex flex-col items-center justify-center gap-3 text-pri-green-850 shadow-lg rounded-md">
                 <PlusIcon className="h-[50px]"/>
