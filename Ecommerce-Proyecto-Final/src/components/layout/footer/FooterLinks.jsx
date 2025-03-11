@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function FooterLinks() {
   return (
     <section className="bg-sec-blue-100">
-        <div className="container py-6 mx-auto w-[730px] flex text-left justify-between text-sec-blue-700 font-semibold darkBlue-hover">
+        <div className="container flex flex-wrap px-6 py-6 mx-auto max-w-[730px] text-left justify-between text-sec-blue-700 font-semibold darkBlue-hover">
             <div>
                 <h5>Categories</h5>
                 <ul className="flex flex-col gap-3 text-xs mt-4">
@@ -39,9 +39,9 @@ function FooterLinks() {
             </div>
         </div>
 
-        <div className="bg-sec-blue-800 lightBlue-hover">
+        <div className="bg-sec-blue-800 lightBlue-hover px-4 sm:px-0">
             <div className="container mx-auto text-sec-blue-100">
-                <div className="flex justify-between py-7 border-b-2 border-sec-blue-100 border-opacity-30">
+                <div className="flex gap-4 sm:gap-0 justify-between py-7 border-b-2 border-sec-blue-100 border-opacity-30">
                     <div className="flex gap-3">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="24" height="24" rx="12" fill="#E2E8F0"/>

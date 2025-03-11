@@ -12,7 +12,7 @@ function Home() {
       <DiscountProducts/>
       <LogoBrands/>
       <FeaturedCategories/>
-      <img className="container mx-auto rounded-xl shadow-md" src="https://res.cloudinary.com/dqyroytaz/image/upload/v1741057191/BannerWoman_nwmqis.jpg" alt="" />
+      <img className="container mx-auto rounded-xl shadow-md hidden md:block" src="https://res.cloudinary.com/dqyroytaz/image/upload/v1741057191/BannerWoman_nwmqis.jpg" alt="" />
       <DiscountProducts/>
       <CTABanners/>
       <Footer/>

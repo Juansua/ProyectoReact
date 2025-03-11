@@ -5,8 +5,8 @@ import { GiftIcon, SparklesIcon, SunIcon } from '@heroicons/react/24/outline'
 function Benefits() {
   return (
     <section className='bg-white text-sec-blue-700 py-[60px]'>
-        <div className='container flex items-center gap-14 w-[1300px] mx-auto'>
-            <div className='w-[1/3] flex flex-col gap-5'>
+        <div className='container flex flex-wrap xl:flex-nowrap gap-8 px-4 xl:px-0 items-center justify-between xl:max-w-screen-xl max-w-xl mx-auto'>
+            <div className='flex flex-col gap-5'>
                 <SunIcon className='h-[66px] text-pri-green-800'/>
                 <div>
                     <h4 className='font-medium w-[187px] mx-auto'>Personalized Skincare for Every Skin Type</h4>
@@ -15,9 +15,9 @@ function Benefits() {
                 </div>
             </div>
 
-            <div class="w-2 h-16 bg-sec-blue-100"></div>
+            <div class="w-1 h-16 bg-sec-blue-100 hidden xl:inline-block"></div>
 
-            <div className='w-[1/3] flex flex-col gap-5'>
+            <div className='flex flex-col gap-5'>
                 <SparklesIcon className='h-[66px] text-pri-green-800'/>
                 <div>
                     <h4 className='font-medium w-[246px] mx-auto'>High-Quality, Dermatologist-Approved Products</h4>
@@ -26,9 +26,9 @@ function Benefits() {
                 </div>
             </div>
 
-            <div class="w-2 h-16 bg-sec-blue-100"></div>
+            <div class="w-1 h-16 bg-sec-blue-100 hidden xl:block"></div>
 
-            <div className='w-[1/3] flex flex-col gap-5'>
+            <div className='flex flex-col gap-5'>
                 <GiftIcon className='h-[66px] text-pri-green-800'/>
                 <div>
                     <h4 className='font-medium w-[230px] mx-auto'>Convenient Shopping with Fast & Secure Delivery</h4>

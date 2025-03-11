@@ -3,7 +3,7 @@ import MainButton from "../../common/buttons/MainButton"
 
 function Hero() {
   return (
-    <section className="container mx-auto mt-2 mb-[55px] pr-10 flex justify-between">
+    <section className="container mx-auto mt-2 mb-[55px] pr-10 flex justify-between px-4 xl:px-0">
         <div className="my-auto text-left">
             <p className="text-lg uppercase text-pri-green-850 tracking-widest">
                 Elegant & Luxurious
