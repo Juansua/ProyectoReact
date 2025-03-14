@@ -4,9 +4,9 @@ Este repositorio es mi proyecto para el curso de React en Coderhouse
 - Dictado por el profesor Santiago Salkin
 
 ## Objetivo del proyecto
-Aprender a usar Javascript + React a través de un ecommerce básico que me permita entender los fundamentos de los temas aprendidos y seguir profundizando en ellos.
+Aprender a usar Javascript + React a través de un ecommerce báscio que me permita entender los fundamentos de los temas aprendidos y seguir profundizando en ellos.
 ## Motivación ¿Por qué lo crearon?
-Busco darle una vuelta a mi carrera de diseñador UX/UI y adentrarme en el mundo del FrontEnd. Mi sueño es poder diseñar y programar mis propias páginas web para clientes selectos.
+Busco cambiar darle una vuelta a mi carrera de diseñador UX/UI y adentrarme en el mundo del frontend. Mi sueño es poder diseñar y programar mis propias páginas web para clientes selectos.
 ## Herramientas que utilizaron
 Utilicé muchas herramientas, de las cuales destaco:
 - Javascript
