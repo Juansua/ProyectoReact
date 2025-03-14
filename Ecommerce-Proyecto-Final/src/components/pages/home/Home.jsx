@@ -6,6 +6,7 @@ import CTABanners from "./CTABanners"
 import Footer from "../../layout/footer/Footer"
 
 function Home() {
+
   return (
     <div>
       <Hero/>
