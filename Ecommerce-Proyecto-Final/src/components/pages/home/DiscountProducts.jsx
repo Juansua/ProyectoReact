@@ -7,11 +7,13 @@ function DiscountProducts() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    async function getProducts() {
-      const response = await getAsyncDataByDiscount();
-      setProducts(response)
-    }
-    getProducts()
+    setTimeout(() => {
+      async function getProducts() {
+        const response = await getAsyncDataByDiscount();
+        setProducts(response)
+      }
+      getProducts()
+    }, "1000");
   },[])
 
   return (

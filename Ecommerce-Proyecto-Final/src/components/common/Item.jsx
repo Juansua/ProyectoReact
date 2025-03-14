@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MainButton from "./buttons/MainButton";
 
 export default function Item({ title, price, category, image, id }) {
   const [ isHovered, setIsHovered ] = useState(false);
+
+  useEffect(() => {
+    if(window.innerWidth < 640) {
+      setIsHovered(true)
+    }
+  }, [window.innerWidth])
 
   return (
     <div className={`
