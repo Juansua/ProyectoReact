@@ -6,7 +6,7 @@ import products from "./data.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAiSj226aouLBTIOJTMK1HNNSxkLByvMBY",
+  apiKey: import.meta.env.VITE_FIRE_KEY,
   authDomain: "react-ecommerce-210ae.firebaseapp.com",
   projectId: "react-ecommerce-210ae",
   storageBucket: "react-ecommerce-210ae.firebasestorage.app",

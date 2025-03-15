@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import MainButton from "./buttons/MainButton";
+import clsx from "clsx";
 
 export default function Item({ title, price, category, image, id }) {
   const [ isHovered, setIsHovered ] = useState(false);
-
-  useEffect(() => {
-    if(window.innerWidth < 640) {
-      setIsHovered(true)
-    }
-  }, [window.innerWidth])
 
   return (
     <div className={`
@@ -37,7 +32,10 @@ export default function Item({ title, price, category, image, id }) {
             </p>
           </div>
 
-          <MainButton className={`${isHovered ? "opacity-100" : "opacity-0"}`}>
+          <MainButton className={clsx({
+            "lg:opacity-0" : !isHovered,
+            "opacity-100": isHovered
+            })}>
             <Link to={`/item/${id}`}>
               View Details
             </Link>

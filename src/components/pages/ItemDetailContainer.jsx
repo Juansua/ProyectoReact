@@ -10,11 +10,13 @@ function ItemDetailContainer() {
     const { id } = useParams()
 
     useEffect(() => {
-        async function getItemData() {
-            const response = await getAsyncDataById(id)
-            setItemInfo(response)
-        }
-        getItemData()
+        setTimeout(() => {
+            async function getItemData() {
+                const response = await getAsyncDataById(id)
+                setItemInfo(response)
+            }
+            getItemData()
+        }, "1000");
     }, [id]);
 
     if ( itemInfo )
