@@ -1,6 +1,7 @@
 import { getAsyncDataByDiscount } from "../../../data/dataBase"
 import { useEffect, useState } from "react";
 import ProductList from "../../layout/body/ProductList"
+import CardSkeleton from "../../common/Skeletons/CardSkeleton";
 // import Loader from "../../common/Loader"
 
 function DiscountProducts() {
@@ -8,22 +9,30 @@ function DiscountProducts() {
 
   useEffect(() => {
     setTimeout(() => {
+
       async function getProducts() {
         const response = await getAsyncDataByDiscount();
         setProducts(response)
       }
+
       getProducts()
-    }, "1000");
+      
+    }, "500");
   },[])
 
+  if ( !!products.length)
   return (
-    <section className="container mx-auto text-left mt-[50px] mb-[110px] px-4 sm:px-0">
-      <h2 className="text-[32px] font-medium text-pri-green-800 border-b-[3px] border-[#E2E5DA]">
-        Featured Products
-      </h2>
+
       <ProductList products={products}/>
-    </section>
+
   )
+  return (
+    <div className="flex flex-wrap gap-5 justify-center my-8">
+      {[...Array(5)].map((_, index) => (
+        <CardSkeleton key={index} />
+      ))}
+    </div>
+    )
 }
 
 export default DiscountProducts

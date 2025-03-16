@@ -27,7 +27,7 @@ function ItemDetail({ title, price, stock, description, category, image, id}) {
       
         <img src={image} alt={title} className="lg:w-1/2 w-full lg:h-[500px] h-64 object-contain object-center rounded"/>
 
-        <div className="text-left lg:w-1/2 w-full lg:py-6 m-auto">
+        <div className=" flex flex-col text-left justify-center lg:w-1/2 w-full lg:py-6">
 
           <div className="py-4">
 
