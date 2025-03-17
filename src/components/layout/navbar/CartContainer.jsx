@@ -4,6 +4,7 @@ import { useContext, useState } from 'react'
 import { createBuyOrder } from '../../../data/dataBase';
 
 function CartContainer() {
+  // Conectarlo al context -> useContext, cartContext
     const { cartItems, removeItem, getTotalPrice } = useContext(cartContext);
 
     const [ orderId, setOrderId] = useState(null);
@@ -14,6 +15,7 @@ function CartContainer() {
         age: "",
       });
 
+      // Función para guardar los datos del usuario comprador
       function onInputChange(evt) {
         //1. Que input modificamos
         const inputName = evt.target.name;
@@ -24,11 +26,6 @@ function CartContainer() {
         // 4. update del state
         setUserData(newUserData);
       }
-
-    // 1.Conectarlo al context -> useContext, cartContext
-    // 2. Mostrar el listado de productos ->
-    // 3. Mostrar de forma condicional un mensaje cuando el carrito esté vacío
-    // 4. Control para eliminar items del carrito
 
     async function handleCheckout(evt) {
       evt.preventDefault();
@@ -51,6 +48,7 @@ function CartContainer() {
 
   return (
     <div>
+      {/* Mostrar el listado de productos -> */}
         {
             cartItems.map( item => 
                 <div className='bg-slate-100 p-8 border' key={item.id}>
@@ -61,6 +59,7 @@ function CartContainer() {
                 </div>
              )
         }
+        {/* Formulario de usuario comprador */}
         <form className='bg-lime-50 flex flex-col gap-4 p-4'>
           <h2>Completa tus datos para la compra 🛍</h2>
           <div className='gap-2 flex flex-col w-80 bg-slate-300 m-auto py-4'>

@@ -5,7 +5,9 @@ const cartContext = createContext( "carrito" )
 
 export function CartContextProvider({children}) {
     const [cartItems, setCartItems] = useState([])
+    
 
+    // Función para darme el precio total de los items añadidos al carrito
     function getTotalPrice() {
         let totalPrice = 0;
         cartItems.forEach( (item) => {
@@ -13,12 +15,8 @@ export function CartContextProvider({children}) {
         })
         return totalPrice;
     }
-
-    // 1. Agregar un item al carrito - addItem()
-    // 2. Eliminar todos los items al carrito - emptyCart
-    // 3. Quitar un item del carrito usando su Id - removeItem(itemId, quantity)
-    // 4. Contar los items del carrito - countItemsInCart()
-
+    
+    // Contar la cantidad de productos que se comprarán en el carrito
     function countItemsInCart() {
         let total = 0;
         cartItems.forEach( (item) => {
@@ -27,6 +25,7 @@ export function CartContextProvider({children}) {
         return total;
     }
 
+    // Agregar un item al carrito - addItem()
     function addItem( { id, title, image, price, count } ) {
         const element = cartItems.find((items) => items.id === id )
         console.log(element)
@@ -39,6 +38,7 @@ export function CartContextProvider({children}) {
         }
     }
 
+    // Quitar un item del carrito usando su Id - removeItem(itemId, quantity)
     function removeItem(id) {
         const newCartState = cartItems.filter(item => item.id !== id);
         setCartItems(newCartState);
