@@ -1,5 +1,14 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  query,
+  where,
+  addDoc,
+} from "firebase/firestore";
 import products from "./data.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -11,7 +20,7 @@ const firebaseConfig = {
   projectId: "react-ecommerce-210ae",
   storageBucket: "react-ecommerce-210ae.firebasestorage.app",
   messagingSenderId: "258615950342",
-  appId: "1:258615950342:web:c8e32cb2927f9da0ab9787"
+  appId: "1:258615950342:web:c8e32cb2927f9da0ab9787",
 };
 
 // 1. Conexión con Firebase
@@ -22,22 +31,21 @@ const db = getFirestore(app);
 
 // 3. Funciones para extraer datos
 export default async function getAsyncData() {
+  // Leer todos los documentos de la colección "products"
+  const collectionRef = collection(db, "products"); //Referencia de colección
+  const productsSnapshot = await getDocs(collectionRef); //Snapshot de datos
 
-    // Leer todos los documentos de la colección "products"
-    const collectionRef = collection(db, "products");  //Referencia de colección
-    const productsSnapshot = await getDocs(collectionRef);  //Snapshot de datos
+  // snapshot -> docs
+  const documentsData = productsSnapshot.docs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
 
-    // snapshot -> docs
-    const documentsData = productsSnapshot.docs.map( doc => {
-      return { ...doc.data(), id: doc.id}
+    // LO MISMO QUE ARRIBA, PERO ARRIBA ES SUGAR SYNTAX
+    // const fullData = doc.data()
+    // fullData.id = doc.id;
+    // return fullData;
+  });
 
-      // LO MISMO QUE ARRIBA, PERO ARRIBA ES SUGAR SYNTAX
-      // const fullData = doc.data()
-      // fullData.id = doc.id;
-      // return fullData;
-    } );
-
-    return documentsData;
+  return documentsData;
 }
 
 // ----> Función para obtener todos los productos
@@ -51,31 +59,33 @@ export async function getAsyncDataById(id) {
 
 // ----> Función para obtener los productos por cada categoría
 export async function getAsyncDataByCategory(cateId) {
-
-  const productsColRef = query(collection(db, "products"), where("category", "==", cateId));
+  const productsColRef = query(
+    collection(db, "products"),
+    where("category", "==", cateId)
+  );
 
   const productsSnapshot = await getDocs(productsColRef);
 
-  const documentsData = productsSnapshot.docs.map( doc => {
-      return { ...doc.data(), id: doc.id}
+  const documentsData = productsSnapshot.docs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
   });
-      return documentsData;
+  return documentsData;
 }
 
 // ----> Función para exportar productos a la base de datos (solo usar si de verdad quieres subir muchos productos)
 export async function exportProductsToDB() {
   //for... of
   // lo mismo que products.forEach( item => {} )
-  for(let item of products){
+  for (let item of products) {
     delete products.id;
-    const docID = await addDoc( collection(db, "products"), item)
-    console.log("Creado Documento", docID.id)
+    const docID = await addDoc(collection(db, "products"), item);
+    console.log("Creado Documento", docID.id);
   }
 }
 
 // ----> Función para crear una orden de compra
 export async function createBuyOrder(orderData) {
-  console.log(orderData)
+  console.log(orderData);
   const newOrderDoc = await addDoc(collection(db, "orders"), orderData);
 
   return newOrderDoc.id;
@@ -83,12 +93,12 @@ export async function createBuyOrder(orderData) {
 
 export async function getAsyncDataByDiscount() {
   //Busco los documentos que cumplan con la característica
-  const q = query(collection(db, "products"), where("discount", "==", true));
-  
+  const q = query(collection(db, "products"), where("discount", ">", 0));
+
   //Recibo los documentos por medio de getDocs
   const querySnapshot = await getDocs(q);
-  const queryData = querySnapshot.docs.map( doc => {
-    return { ...doc.data(), id: doc.id}
-  })
+  const queryData = querySnapshot.docs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
+  });
   return queryData;
 }
