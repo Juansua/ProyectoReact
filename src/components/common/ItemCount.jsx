@@ -1,8 +1,7 @@
 import { useState } from "react";
-import addIcon from "../../assets/add.svg";
-import removeIcon from "../../assets/remove.svg";
 import CountButton from "./buttons/CountButton";
 import MainButton from "./buttons/MainButton";
+import icons from "../../assets/icons";
 
 export default function ItemCount({ stock, handleAddToCart }) {
   const [count, setCount] = useState(1);
@@ -16,16 +15,16 @@ export default function ItemCount({ stock, handleAddToCart }) {
   };
 
   return (
-    <div className="flex flex-wrap h-[48px] gap-2 lg:gap-8">
-      <div className="flex items-center gap-6 px-2 bg-[#FAFFFE] border border-sec-blue-100">
+    <div className="flex sm:justify-end justify-between h-[48px] gap-2 lg:gap-8">
+      <div className="flex items-center lg:gap-6 gap-4 j px-2 bg-[#FAFFFE] border border-sec-blue-100">
         <CountButton onClick={handleAdd}>
-          <img src={removeIcon} alt="remove Icon" />
+          <img src={icons.remove} alt="remove Icon" />
         </CountButton>
 
         <p className="text-xl font-semibold text-sec-blue-800">{count}</p>
 
         <CountButton onClick={handleSubstract}>
-          <img src={addIcon} alt="add Icon" />
+          <img src={icons.addBg} alt="add Icon" />
         </CountButton>
       </div>
 
@@ -33,6 +32,7 @@ export default function ItemCount({ stock, handleAddToCart }) {
         onClick={() => {
           handleAddToCart(count);
         }}
+        leftIcon={"addNoBg"}
       >
         Add to Cart
       </MainButton>

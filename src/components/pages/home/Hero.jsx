@@ -25,7 +25,7 @@ function Hero() {
         <Link to="/shop-now">
           <MainButton
             className="pl-10 pr-8 mt-16 py-[18px] text-xl font-normal shadow-lg"
-            rightIcon={true}
+            rightIcon={"arrowFW"}
           >
             Shop Now
           </MainButton>

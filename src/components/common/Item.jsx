@@ -1,15 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import cartContext from "../../context/cartContext";
 import MainButton from "./buttons/MainButton";
 import clsx from "clsx";
 
 export default function Item({ title, price, discount, category, image, id }) {
   const [isHovered, setIsHovered] = useState(false);
-
-  function valueAfterDisc(prodDisc, prodValue) {
-    const newValue = prodValue - (prodDisc / 100) * prodValue;
-    return newValue.toFixed(2);
-  }
+  const { valueAfterDisc } = useContext(cartContext);
 
   return (
     <div
@@ -47,12 +44,10 @@ export default function Item({ title, price, discount, category, image, id }) {
               <p className="font-bold text-base">
                 ${discount ? valueAfterDisc(discount, price) : price}
               </p>
-              {discount ? (
+              {discount && (
                 <p className="line-through text-sec-blue-700 font-light">
                   ${price}
                 </p>
-              ) : (
-                ""
               )}
             </div>
           </div>
