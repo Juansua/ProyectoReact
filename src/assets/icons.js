@@ -6,6 +6,9 @@ import addNoBg from "./add-no-bg.svg";
 import addBg from "./add.svg";
 import remove from "./remove.svg";
 import arrowFW from "./arrowFW.svg";
+import search from "./search.svg";
+import shopBag from "./shopBag.svg";
+import brushTitle from "./brushTitle.svg";
 
 const icons = {
   facebook,
@@ -16,6 +19,9 @@ const icons = {
   addBg,
   remove,
   arrowFW,
+  search,
+  shopBag,
+  brushTitle,
 };
 
 export default icons;

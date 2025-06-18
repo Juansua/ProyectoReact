@@ -14,25 +14,21 @@ function ItemListContainer() {
   useEffect(() => {
     setIsLoading(true);
     if (cateId === undefined) {
-      setTimeout(() => {
-        async function getAllItems() {
-          const response = await getAsyncData();
+      async function getAllItems() {
+        const response = await getAsyncData();
 
-          setProducts(response);
-          setIsLoading(false);
-        }
-        getAllItems();
-      }, "500");
+        setProducts(response);
+        setIsLoading(false);
+      }
+      getAllItems();
     } else {
-      setTimeout(() => {
-        async function getItemsByCate() {
-          const response = await getAsyncDataByCategory(cateId);
+      async function getItemsByCate() {
+        const response = await getAsyncDataByCategory(cateId);
 
-          setProducts(response);
-          setIsLoading(false);
-        }
-        getItemsByCate();
-      }, "500");
+        setProducts(response);
+        setIsLoading(false);
+      }
+      getItemsByCate();
     }
   }, [cateId]);
 

@@ -40,7 +40,7 @@ function ItemDetail() {
 
   // Añade los items seleccionados al carrito (se colocan después del return porque estas props no existen hasta que el estado de itemInfo no haya sido cambiado y sus props hayan sido destructuradas)
   const handleAddToCart = (count) => {
-    addItem({ id, price, title, count, image });
+    addItem({ id, price, title, count, image, category });
     setIsAddedToCart(true);
   };
 

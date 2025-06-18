@@ -1,67 +1,50 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import cartContext from "../../context/cartContext";
-import MainButton from "./buttons/MainButton";
-import clsx from "clsx";
 
 export default function Item({ title, price, discount, category, image, id }) {
   const [isHovered, setIsHovered] = useState(false);
   const { valueAfterDisc } = useContext(cartContext);
 
   return (
-    <div
-      className={`
-      bg-white border-2 border-transparent flex flex-col gap-4 w-[290px] p-4 rounded-lg text-left text-sec-blue-800 shadow-lg
-      hover:border-sec-blue-100 hover:shadow-xl transition-all duration-200
+    <Link to={`/item/${id}`}>
+      <div
+        className={`relative
+      bg-white border-2 flex flex-col gap-4 w-[290px] p-4 rounded-lg text-left text-sec-blue-800 border-sec-blue-100 hover:shadow-xl transition-all duration-200
       `}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {discount ? (
-        <div className="bg-pri-green-100 font-semibold px-2 py-[2px] absolute shadow-[inset_2px_2px_2px_rgba(0,0,0,0.25)] rounded-lg">
-          {discount}% OFF
-        </div>
-      ) : (
-        ""
-      )}
-
-      <img
-        src={image}
-        className="w-full h-[258px] object-contain bg-white"
-        alt={title}
-      />
-      <div>
-        <h3 className="text-base truncate text-metal-500 font-semibold">
-          {title}
-        </h3>
-
-        <div className="flex justify-between items-end">
-          <div className="">
-            <p className="font-normal text-sec-blue-700 capitalize">
-              {category}
-            </p>
-            <div className="flex gap-[10px]">
-              <p className="font-bold text-base">
-                ${discount ? valueAfterDisc(discount, price) : price}
-              </p>
-              {discount && (
-                <p className="line-through text-sec-blue-700 font-light">
-                  ${price}
-                </p>
-              )}
-            </div>
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {discount ? (
+          <div className="bg-pri-green-50 text-pri-green-800 font-semibold px-2 py-[2px] absolute shadow-[inset_2px_2px_2px_rgba(0,0,0,0.25)] rounded-lg">
+            {discount}% OFF
           </div>
+        ) : (
+          ""
+        )}
 
-          <MainButton
-            className={clsx({
-              "lg:opacity-0": !isHovered,
-              "opacity-100": isHovered,
-            })}
-          >
-            <Link to={`/item/${id}`}>View Details</Link>
-          </MainButton>
+        <img
+          src={image}
+          className="w-full h-[258px] object-contain bg-white"
+          alt={title}
+        />
+        <div className="relative">
+          <p className="font-normal text-sec-blue-700 capitalize">{category}</p>
+
+          <h3 className="text-base text-metal-500 font-semibold">{title}</h3>
+
+          <div className="flex gap-[10px]">
+            <p className="font-bold text-base">
+              ${discount ? valueAfterDisc(discount, price) : price}
+            </p>
+            {discount && (
+              <p className="line-through text-sec-blue-700 font-light">
+                ${price}
+              </p>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

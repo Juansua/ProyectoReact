@@ -25,9 +25,8 @@ export function CartContextProvider({ children }) {
   }
 
   // Agregar un item al carrito - addItem()
-  function addItem({ id, title, image, price, count }) {
+  function addItem({ id, title, image, price, count, category }) {
     const element = cartItems.find((items) => items.id === id);
-    console.log(element);
     if (element && element.id) {
       const data = cartItems.filter((items) => items.id !== element.id);
       return setCartItems([
@@ -35,14 +34,31 @@ export function CartContextProvider({ children }) {
         { ...element, count: element.count + count },
       ]);
     } else {
-      setCartItems([...cartItems, { id, title, image, price, count }]);
+      setCartItems([
+        ...cartItems,
+        { id, title, image, price, count, category },
+      ]);
     }
   }
 
-  // Quitar un item del carrito usando su Id - removeItem(itemId, quantity)
-  function removeItem(id) {
+  // Quitar un item del carrito usando su Id - deleteItem(itemId, quantity)
+  function deleteItem(id) {
     const newCartState = cartItems.filter((item) => item.id !== id);
     setCartItems(newCartState);
+  }
+
+  // TODO Añadir una función para adicionar productos al carrito en base el stock disponible.
+  function removeItem(id) {
+    const updatedCart = cartItems
+      .map((prev) => {
+        if (prev.id === id) {
+          return { ...prev, count: prev.count - 1 };
+        }
+        return prev;
+      })
+      .filter((item) => item.count > 0); // elimina si count llega a 0
+
+    setCartItems(updatedCart);
   }
 
   function valueAfterDisc(prodDisc, prodValue) {
@@ -57,6 +73,7 @@ export function CartContextProvider({ children }) {
         countItemsInCart,
         addItem,
         removeItem,
+        deleteItem,
         getTotalPrice,
         name: "Carrito de Compras",
         valueAfterDisc,

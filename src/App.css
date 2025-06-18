@@ -1,17 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
-  font-family: 'Lexend', serif;
+  font-family: "Lexend", serif;
 }
 
 body {
-  background-color: #F3F7E9;
+  background-color: #f0f5f1;
 }
 
 header a.active {
   font-weight: 650;
+  color: #384a44;
 }
 
 a.active {
@@ -23,14 +26,23 @@ a.active {
   text-shadow: rgba(0, 0, 0, 0.253) 0 4px 2px;
 }
 
+/* ---- Fonts ---- */
+
+.source-serif-4-font {
+  font-family: "Source Serif 4", serif;
+}
+
 /* ----- Hovers ---- */
 
 .darkBlue-hover li:hover {
-  --tw-text-opacity: 1;
-    color: rgb(58 86 104 / var(--tw-text-opacity, 1)) /* #3a5668 */;
+  color: #3a5668;
 }
 
 .lightBlue-hover li:hover {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity, 1)) /* #cbd5e1 */;
+  color: #cbd5e1;
+}
+
+.darkGreen-hover a:hover,
+.darkGreen-hover li:hover {
+  color: #384a44;
 }

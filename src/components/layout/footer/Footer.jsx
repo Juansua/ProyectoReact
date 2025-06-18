@@ -1,14 +1,13 @@
-import React from 'react'
-import Benefits from './Benefits'
-import FooterLinks from './FooterLinks'
+import Benefits from "./Benefits";
+import FooterLinks from "./FooterLinks";
 
 function Footer() {
   return (
     <footer>
-        <Benefits/>
-        <FooterLinks/>
+      <Benefits />
+      <FooterLinks />
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

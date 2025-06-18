@@ -5,8 +5,8 @@ function MainButton({ children, className, rightIcon, leftIcon, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`
-        flex items-center gap-2 py-[10px] px-6 text-sm rounded-md bg-sec-blue-700 hover:bg-sec-blue-800 text-white font-regular ${className} transition duration-200
+      className={`${className}
+        flex items-center gap-2 py-[10px] px-6 text-sm rounded-md bg-sec-blue-700 hover:bg-sec-blue-800 text-white font-regular  transition duration-200
         `}
     >
       {leftIcon && icons[leftIcon] && (
