@@ -2,11 +2,11 @@ import cartContext from "../../../../context/cartContext";
 import { useContext, useState } from "react";
 import { createBuyOrder } from "../../../../data/dataBase";
 import CartForm from "./CartForm";
+import Footer from "../../footer/Footer";
 
 function CartContainer() {
   // Conectarlo al context -> useContext, cartContext
-  const { cartItems, deleteItem, removeItem, getTotalPrice } =
-    useContext(cartContext);
+  const { cartItems, removeItem, getTotalPrice } = useContext(cartContext);
 
   const [orderId, setOrderId] = useState(null);
 
@@ -47,41 +47,55 @@ function CartContainer() {
     console.log("Compra Realizada", newOrder);
   }
 
-  return (
-    <div className="container bg-slate-500 lg:max-w-[1018px] mt-10 mx-auto text-left">
-      <h2>Review your products</h2>
-      {/* Mostrar el listado de productos -> */}
-      {cartItems.map((item) => (
-        <div
-          className="bg-white p-8 border flex justify-between items-center"
-          key={item.id}
-        >
-          <div className="flex gap-8">
-            <img className="w-[120px]" src={item.image} alt={item.image} />
-            <div className="text-left">
-              <p className="first-letter:uppercase">{item.category}</p>
-              <h3>{item.title}</h3>
-              <p>Unidades: {item.count}</p>
-              <button
-                className="bg-red-700 hover:bg-red-800 text-white font-bold py-1 px-8 rounded mx-auto mt-4"
-                onClick={() => {
-                  removeItem(item.id);
-                }}
-              >
-                Eliminar
-              </button>
+  if (cartItems != 0)
+    return (
+      //TODO Add an empty state and improve products UI
+      <div className="container lg:max-w-[1018px] mb-[150px] mt-[2%] mx-auto text-left">
+        <h2 className="text-[18px] font-semibold text-pri-green-800 pb-[16px]">
+          Review your products
+        </h2>
+        {/* Mostrar el listado de productos -> */}
+        {cartItems.map((item) => (
+          <div
+            className="bg-white p-8 border flex justify-between items-center"
+            key={item.id}
+          >
+            <div className="flex gap-8">
+              <img className="w-[120px]" src={item.image} alt={item.image} />
+              <div className="text-left">
+                <p className="first-letter:uppercase">{item.category}</p>
+                <h3>{item.title}</h3>
+                <p>Unidades: {item.count}</p>
+                <button
+                  className="bg-slate-200 hover:bg-slate-300 text-slate-800 mx-auto mt-4 py-2 px-8 rounded-lg text-sm"
+                  onClick={() => {
+                    removeItem(item.id);
+                  }}
+                >
+                  Remove Item
+                </button>
+              </div>
             </div>
+            <p>Precio: ${item.price}</p>
           </div>
-          <p>Precio: ${item.price}</p>
-        </div>
-      ))}
-      {/* Formulario de usuario comprador */}
-      <CartForm
-        onInputChange={onInputChange}
-        handleCheckout={handleCheckout}
-        orderId={orderId}
-        userData={userData}
-      />
+        ))}
+        {/* Formulario de usuario comprador */}
+        <CartForm
+          onInputChange={onInputChange}
+          handleCheckout={handleCheckout}
+          orderId={orderId}
+          userData={userData}
+        />
+      </div>
+    );
+  return (
+    <div className="container lg:max-w-[1018px] my-[200px] mx-auto">
+      <h2 className="text-2xl font-bold text-pri-green-800 pb-4">
+        Your cart is empty!
+      </h2>
+      <p className="text-lg text-pri-green-800">
+        Go ahead and add your products
+      </p>
     </div>
   );
 }

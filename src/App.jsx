@@ -7,6 +7,7 @@ import { CartContextProvider } from "./context/cartContext";
 import CartContainer from "./components/layout/navbar/cart/CartContainer";
 import Header from "./components/layout/body/Header";
 import Home from "./components/pages/home/Home";
+import Footer from "./components/layout/footer/Footer";
 // import { exportProductsToDB } from './data/dataBase'
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
           <Route path="/category/:cateId" element={<ItemListContainer />} />
           <Route path="/cart" element={<CartContainer />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </CartContextProvider>
   );
