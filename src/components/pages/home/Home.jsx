@@ -30,7 +30,6 @@ function Home() {
       />
       <DiscountProducts />
       <CTABanners />
-      <Footer />
     </div>
   );
 }
